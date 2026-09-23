@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB TRACKER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="main">
+        <nav>
+            <div id="left-nav">
+                <a href="#">💼 JobTrack</a>
+            </div>
+
+            <div id="right-nav">
+                <p>Total Applications: <span id="total-count">0</span></p>
+            </div>
+        </nav>
+
+        <header id="heading">
+            <h2>Job Application Tracker</h2>
+            <p>Manage all your job applications in one place</p>
+        </header>
+
+        <!-- Stats Cards -->
+        <section class="cards">
+            <div id="applied">
+                <h6>APPLIED</h6>
+                <span class="count" id="applied-count">0</span>
+            </div>
+            <div id="interview">
+                <h6>INTERVIEW</h6>
+                <span class="count" id="interview-count">0</span>
+            </div>
+            <div id="offer">
+                <h6>OFFER</h6>
+                <span class="count" id="offer-count">0</span>
+            </div>
+            <div id="reject">
+                <h6>REJECTED</h6>
+                <span class="count" id="rejected-count">0</span>
+            </div>
+        </section>
+
+        <!-- Hero Form Section -->
+        <section id="hero-section">
+            <div id="add-new">
+                <h3>+ Add New Application</h3>
+            </div>
+
+            <!-- Wrapped in <form> for HTML5 validation & submission -->
+            <form id="job-form">
+                <label for="company">Company Name</label>
+                <input id="company" type="text" placeholder="e.g Google" required>
+
+                <label for="role">Position/Role</label>
+                <input id="role" type="text" placeholder="e.g React Developer" required>
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+
+                <label for="notes">Notes (Optional)</label>
+                <textarea id="notes" placeholder="Referral name, salary range, interview dates..."></textarea>
+
+                <div id="addBtn">
+                    <button type="submit"> <img src="Image_icon/Plus-Circle.svg" alt=""><span> Add Application
+                        </span></button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filter Section -->
+        <section id="filter">
+            <div id="search">
+                <input type="text" id="search-input" placeholder="Search by Company or role">
+            </div>
+
+            <div id="filter-btn">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Applied">Applied</button>
+                <button class="filter-btn" data-filter="Interview">Interview</button>
+                <button class="filter-btn" data-filter="Offer">Offer</button>
+                <button class="filter-btn" data-filter="Rejected">Rejected</button>
+            </div>
+        </section>
+
+        <!-- Application Cards Grid -->
+        <section id="application-cards">
+            <!-- Demo Dynamic Card Template -->
+            <div class="job-card">
+                <h3>Google</h3>
+                <p class="role">Frontend Developer</p>
+                <p class="location">Noida</p>
+                <span class="status-badge applied">Applied</span>
+                <p class="date">Sep 15</p>
+                <div class="card-actions">
+                    <button type="button" class="edit-btn">Edit</button>
+                    <button type="button" class="delete-btn">Delete</button>
+                </div>
+            </div>
+
+            <!-- Demo Dynamic Card Template -->
+            <div class="job-card">
+                <h3>Microsoft</h3>
+                <p class="role">Software Engineer</p>
+                <p class="location">Bengaluru</p>
+                <span class="status-badge applied">Interview</span>
+                <p class="date">Sep 28</p>
+                <div class="card-actions">
+                    <button type="button" class="edit-btn">Edit</button>
+                    <button type="button" class="delete-btn">Delete</button>
+                </div>
+            </div>
+
+            <!-- Demo Dynamic Card Template -->
+            <div class="job-card">
+                <h3>Accenture</h3>
+                <p class="role">Web Developer</p>
+                <p class="location">Gurugram</p>
+                <span class="status-badge applied">Rejected</span>
+                <p class="date">Aug 10</p>
+                <div class="card-actions">
+                    <button type="button" class="edit-btn">Edit</button>
+                    <button type="button" class="delete-btn">Delete</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

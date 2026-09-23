@@ -1,0 +1,394 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --bg-input: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-primary: #6366f1;
+    --accent-hover: #4f46e5;
+    --border-color: #334155;
+
+    /* Status Badge Colors */
+    --applied-color: #3b82f6;
+    --interview-color: #f59e0b;
+    --offer-color: #10b981;
+    --rejected-color: #ef4444;
+
+    --radius: 12px;
+    --transition: all 0.25s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#main {
+    width: 100%;
+    max-width: 1050px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+#left-nav a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+#right-nav p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+#total-count {
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+/* Header */
+#heading h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+#heading p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Stats Cards Grid */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.cards>div {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.cards>div:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-primary);
+}
+
+.cards h6 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.cards .count {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Hero Form Section */
+#hero-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+#add-new h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+}
+
+#job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#job-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: -0.5rem;
+}
+
+#job-form input,
+#job-form select,
+#job-form textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+#job-form input:focus,
+#job-form select:focus,
+#job-form textarea:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+#job-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#addBtn button {
+    width: 100%;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+#addBtn button:hover {
+    background: var(--accent-hover);
+}
+
+#addBtn button img {
+    float: none;
+    margin: 0;
+
+}
+
+/* Filter & Search Section */
+#filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search input {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    min-width: 260px;
+    font-size: 0.9rem;
+}
+
+#search input:focus {
+    border-color: var(--accent-primary);
+}
+
+#filter-btn {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+/* Application Cards Grid */
+#application-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+/*.job-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: var(--transition);
+}*/
+.job-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: var(--transition);
+
+    /* Animation Line Add Karo */
+    animation: cardAppear 0.4s ease-out forwards;
+}
+
+.job-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+}
+
+.job-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.job-card .role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.job-card .location {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Status Pill Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    width: fit-content;
+    margin-top: 0.25rem;
+}
+
+.status-badge.applied {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--applied-color);
+}
+
+.status-badge.interview {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--interview-color);
+}
+
+.status-badge.offer {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--offer-color);
+}
+
+.status-badge.rejected {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--rejected-color);
+}
+
+.job-card .date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* Card Buttons */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.card-actions button {
+    flex: 1;
+    padding: 0.45rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.card-actions .edit-btn:hover {
+    background: var(--bg-input);
+}
+
+.card-actions .delete-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--rejected-color);
+    border-color: var(--rejected-color);
+}
+
+/* Form Loading / Processing State */
+#job-form.processing {
+    opacity: 0.6;
+    pointer-events: none;
+    /* Form par double click ya typing disable kar deta hai */
+    filter: blur(1.5px);
+    transition: all 0.3s ease;
+}
+
+#addBtn button:disabled {
+    background: #475569;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Card Entry Keyframe Animation */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
